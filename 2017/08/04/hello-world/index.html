@@ -44,7 +44,7 @@
           isArchive: false,
           isTag: false,
           isCategory: false,
-          open_in_new: true
+          open_in_new: false
       }
   </script>
 </head>
@@ -120,11 +120,11 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=p5_Wkp6RkZaQlufW1onEyMo" title="mail">mail</a>
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
                             
                                 <a class="fl github" target="_blank" href="https://github.com/hlwu" title="github">github</a>
                             
-                                <a class="fl zhihu" target="_blank" href="https://zhihu.com/people/hlwu" title="zhihu">zhihu</a>
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/hlwu" title="zhihu">zhihu</a>
                             
                                 <a class="fl weibo" target="_blank" href="http://weibo.com/hlwuwang" title="weibo">weibo</a>
                             
@@ -146,7 +146,7 @@
                 
                 <section class="switch-part switch-part3">
                 
-                    <div id="js-aboutme">死肥宅. 渣渣渣渣. MADAO.</div>
+                    <div id="js-aboutme">死肥宅. 渣渣渣渣. MADAO</div>
                 </section>
                 
             </div>
@@ -188,11 +188,11 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=p5_Wkp6RkZaQlufW1onEyMo" title="mail">mail</a>
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
                     
                         <a class="github" target="_blank" href="https://github.com/hlwu" title="github">github</a>
                     
-                        <a class="zhihu" target="_blank" href="https://zhihu.com/people/hlwu" title="zhihu">zhihu</a>
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/hlwu" title="zhihu">zhihu</a>
                     
                         <a class="weibo" target="_blank" href="http://weibo.com/hlwuwang" title="weibo">weibo</a>
                     
@@ -248,10 +248,10 @@
       
       
         <div class="page-reward">
-          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
           <div class="hide_box"></div>
           <div class="shang_box">
-            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
             <div class="shang_tit">
               <p></p>
             </div>
@@ -287,6 +287,7 @@
             $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
           });
           function dashangToggle(){
+            
             $(".hide_box").fadeToggle();
             $(".shang_box").fadeToggle();
           }
@@ -380,11 +381,20 @@
 
 
     
-        <section class="youyan" id="comments">
-  <div id="uyan_frame"></div>
-  <script src="http://v2.uyan.cc/code/uyan.js?uid=2141030"></script>
-</section>
-
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'hlwu',
+      repo: 'hlwu.github.io',
+      oauth: {
+        client_id: '8c6277eb276d8df791c3',
+        client_secret: '3ff8c5395b8a1970e2d957085dc87fc54ff71d9d',
+      },
+    })
+    gitment.render('gitments')
+</script>
     
 
 
@@ -440,7 +450,7 @@
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >访问量: 
+                        <span id="site-visit" >海贼到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -450,7 +460,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">阅读量: 
+                        <span id="page-visit">本页阅读量: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>

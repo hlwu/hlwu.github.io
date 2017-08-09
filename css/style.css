@@ -139,8 +139,8 @@ body,
 body {
   font-family: "微软雅黑", 'Microsoft JhengHei', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
   font-size: 16px;
-  background: #3f3f3f;
-  color: #999;
+  background: #e6efea;
+  color: #080808;
   -webkit-overflow-scrolling: touch;
 }
 ::selection {
@@ -587,7 +587,7 @@ a {
     margin: auto;
   }
   #container .bdshare-button-style2-24 .fx {
-    color: #999;
+    color: #4d5ba2;
     padding: 0;
     margin: 6px;
     height: 54px;
@@ -2245,10 +2245,10 @@ a {
   border-bottom: none;
 }
 .scroll a .fa {
-  color: rgba(255,255,255,0.8);
+  color: rgba(25,23,23,0.8);
 }
 .scroll a:hover {
-  background: rgba(147,181,224,0.3) !important;
+  background: rgba(51,73,138,0.8) !important;
 }
 .scroll a:hover .fa {
   color: #fff;
@@ -2310,11 +2310,11 @@ color
 }
 #busuanzi_value_site_uv,
 #busuanzi_value_page_pv {
-  color: #fff;
+  color: #1b5273;
 }
 #busuanzi_value_site_uv:hover,
 #busuanzi_value_page_pv:hover {
-  color: #999;
+  color: #442a2a;
 }
 .duoshuo {
   padding: 0 40px;
@@ -2494,6 +2494,466 @@ color
   padding-left: 8px;
   font-size: 12px;
 }
+.gitment-container {
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #412fcc;
+  word-wrap: break-word;
+}
+.gitment-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.gitment-container *:disabled {
+  cursor: not-allowed;
+}
+.gitment-container a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.gitment-container a:visited {
+  cursor: pointer;
+  text-decoration: none;
+}
+.gitment-container a:hover {
+  text-decoration: underline;
+}
+.gitment-container .gitment-hidden {
+  display: none;
+}
+.gitment-container .gitment-spinner-icon {
+  fill: #fff;
+  -webkit-animation: gitment-spin 1s steps(12) infinite;
+  -webkit-animation: gitment-spin 1s steps(12) infinite;
+  -moz-animation: gitment-spin 1s steps(12) infinite;
+  -ms-animation: gitment-spin 1s steps(12) infinite;
+  animation: gitment-spin 1s steps(12) infinite;
+}
+@-webkit-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.gitment-root-container,
+.gitment-header-container {
+  margin: 19px 40px;
+}
+.gitment-header-like-btn {
+  cursor: pointer;
+}
+.gitment-comment-like-btn {
+  cursor: pointer;
+  float: right;
+}
+.gitment-comment-like-btn.liked {
+  color: #f44336;
+}
+.gitment-header-like-btn svg {
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+}
+.gitment-comment-like-btn svg {
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+}
+.gitment-header-like-btn.liked svg,
+.gitment-comment-like-btn.liked svg {
+  fill: #f44336;
+}
+a.gitment-header-issue-link {
+  float: right;
+  line-height: 30px;
+  color: #412fcc;
+}
+a.gitment-header-issue-link:visited {
+  float: right;
+  line-height: 30px;
+  color: #666;
+}
+a.gitment-header-issue-link:hover {
+  color: #666;
+}
+.gitment-comments-loading,
+.gitment-comments-error,
+.gitment-comments-empty {
+  text-align: center;
+  margin: 50px 0;
+}
+.gitment-comments-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 38px;
+}
+.gitment-comment,
+.gitment-editor-container {
+  position: relative;
+  min-height: 60px;
+  padding-left: 60px;
+  margin: 19px 0;
+}
+.gitment-comment-avatar,
+.gitment-editor-avatar {
+  float: left;
+  margin-left: -60px;
+}
+.gitment-comment-avatar,
+.gitment-comment-avatar-img,
+.gitment-editor-avatar-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+}
+.gitment-editor-avatar svg {
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+}
+.gitment-editor-avatar .gitment-github-icon {
+  fill: #fff;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.gitment-comment-main {
+  position: relative;
+  border: 1px solid #262626;
+  border-radius: 0;
+}
+.gitment-editor-main {
+  position: relative;
+  border: 1px solid #262626;
+  border-radius: 0;
+}
+.gitment-editor-main::before,
+.gitment-editor-main::after {
+  position: absolute;
+  top: 11px;
+  left: -16px;
+  display: block;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  content: "";
+  border-color: transparent;
+  border-style: solid solid outset;
+}
+.gitment-comment-main::before,
+.gitment-comment-main::after {
+  position: absolute;
+  top: 11px;
+  left: -16px;
+  display: block;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  content: "";
+  border-color: transparent;
+  border-style: solid solid outset;
+}
+.gitment-editor-main::before,
+.gitment-comment-main::before {
+  border-width: 8px;
+  border-right-color: #262626;
+}
+.gitment-editor-main::after,
+.gitment-comment-main::after {
+  margin-top: 1px;
+  margin-left: 2px;
+  border-width: 7px;
+  border-right-color: #262626;
+}
+.gitment-comment-header {
+  margin: 12px 15px;
+  color: #fff;
+  background-color: #3f3f3f;
+  border-radius: 3px;
+}
+.gitment-editor-header {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #262626;
+}
+a.gitment-comment-name {
+  font-weight: 600;
+  color: #666;
+}
+a.gitment-comment-name:visited {
+  font-weight: 600;
+  color: #666;
+}
+.gitment-editor-tabs {
+  margin-bottom: -1px;
+  margin-left: -1px;
+}
+.gitment-editor-tab {
+  display: inline-block;
+  padding: 11px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4094c7;
+  text-decoration: none;
+  background-color: transparent;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+.gitment-editor-tab.gitment-selected {
+  color: #fff;
+  background-color: #3f3f3f;
+  border-color: #262626;
+}
+.gitment-editor-login {
+  float: right;
+  margin-top: -30px;
+  margin-right: 15px;
+}
+a.gitment-footer-project-link,
+a.gitment-editor-login-link {
+  color: #2196f3;
+}
+a.gitment-footer-project-link:visited,
+a.gitment-editor-login-link:visited {
+  color: #2196f3;
+}
+a.gitment-editor-logout-link {
+  color: #4094c7;
+}
+a.gitment-editor-logout-link:visited {
+  color: #666;
+}
+a.gitment-editor-logout-link:hover {
+  color: #2196f3;
+  text-decoration: none;
+}
+.gitment-comment-body {
+  position: relative;
+  margin: 12px 15px;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.gitment-comment-body-folded {
+  cursor: pointer;
+}
+.gitment-comment-body-folded::before {
+  display: block !important;
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 50px;
+  pointer-events: none;
+  background: -webkit--webkit-linear-gradient(top, rgba(0,0,0,0), rgba(255,255,255,0.9));
+  background: -webkit--moz-linear-gradient(top, rgba(0,0,0,0), rgba(255,255,255,0.9));
+  background: -webkit--ms-linear-gradient(top, rgba(0,0,0,0), rgba(255,255,255,0.9));
+  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,255,255,0.9));
+  background: -webkit-linear-gradient(270deg, rgba(255,255,255,0), rgba(47,47,47,0.9));
+  background: -moz-linear-gradient(270deg, rgba(255,255,255,0), rgba(47,47,47,0.9));
+  background: -ms-linear-gradient(270deg, rgba(255,255,255,0), rgba(47,47,47,0.9));
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(47,47,47,0.9));
+}
+.gitment-comment-body-folded::after {
+  display: block !important;
+  content: "Click to Expand" !important;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: #3f3f3f;
+}
+.gitment-editor-body {
+  margin: 0;
+}
+.gitment-comment-body > *:first-child,
+.gitment-editor-preview > *:first-child {
+  margin-top: 0 !important;
+}
+.gitment-comment-body > *:last-child,
+.gitment-editor-preview > *:last-child {
+  margin-bottom: 0 !important;
+}
+.gitment-editor-body textarea {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  max-height: 500px;
+  padding: 16px;
+  resize: vertical;
+  max-width: 100%;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #3f3f3f;
+  color: #fff;
+  vertical-align: middle;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  overflow: visible;
+}
+.gitment-editor-body textarea:focus {
+  background-color: #3f3f3f;
+}
+.gitment-editor-preview {
+  min-height: 150px;
+  padding: 16px;
+  background-color: transparent;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.gitment-editor-footer {
+  padding: 0;
+  margin-top: 10px;
+}
+.gitment-editor-footer::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+a.gitment-editor-footer-tip {
+  display: inline-block;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+a.gitment-editor-footer-tip:hover {
+  color: #2196f3;
+  text-decoration: none;
+}
+.gitment-comments-pagination {
+  list-style: none;
+  text-align: right;
+  border-radius: 0;
+  margin: -19px 0 19px 0;
+}
+.gitment-comments-page-item {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #262626;
+  margin-left: -1px;
+  padding: 0.25rem 0.5rem;
+}
+.gitment-comments-page-item:hover,
+.gitment-comments-page-item.gitment-selected {
+  background-color: #f5f5f5;
+}
+.gitment-editor-submit,
+.gitment-comments-init-btn {
+  color: #fff;
+  background-color: #00bcd4;
+  position: relative;
+  display: inline-block;
+  padding: 7px 13px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-background-size: 110% 110%;
+  -moz-background-size: 110% 110%;
+  background-size: 110% 110%;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.gitment-editor-submit:hover {
+  background-color: #4094c7;
+}
+.gitment-comments-init-btn:hover {
+  background-color: #4094c7;
+}
+.gitment-comments-init-btn:disabled {
+  color: rgba(255,255,255,0.75);
+  background-color: #4094c7;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.gitment-editor-submit {
+  float: right;
+}
+.gitment-editor-submit:disabled {
+  color: rgba(255,255,255,0.75);
+  background-color: #4094c7;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.gitment-footer-container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 12px;
+}
+@-moz-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes gitment-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 .body-wrap {
   margin-bottom: 80px;
 }
@@ -2567,7 +3027,7 @@ color
   color: #c8c8c8;
 }
 .article-title {
-  color: #999;
+  color: #0e0e0e;
   margin-left: 0px;
   font-weight: initial;
   line-height: 35px;
@@ -2583,7 +3043,7 @@ color
   transition: color 0.3s;
 }
 .article-title:hover {
-  color: #fff;
+  color: #498bb5;
 }
 #more {
   display: none;
@@ -2774,24 +3234,24 @@ color
 }
 #article-nav .article-nav-link-wrap {
   margin: 0px 30px 0px 30px;
-  font-size: 14px;
-  color: #333;
+  font-size: 24px;
+  color: #000;
 }
 #article-nav .article-nav-link-wrap .article-nav-title {
   display: inline-block;
   font-size: 1rem;
-  color: #999;
+  color: #000;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
   transition: color 0.3s;
 }
 #article-nav .article-nav-link-wrap strong {
-  background: #999;
+  background: #000;
   color: #fff;
   border-radius: 100%;
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   display: inline-block;
   text-align: center;
   -webkit-transition: background 0.3s;
@@ -2803,7 +3263,7 @@ color
   background: #248eb7;
 }
 #article-nav .article-nav-link-wrap:hover .article-nav-title {
-  color: #fff;
+  color: #248eb7;
 }
 #article-nav #article-nav-older {
   float: right;
@@ -2903,7 +3363,7 @@ color
   font-size: 0.93em;
   line-height: 1.6em;
   word-break: break-word;
-  background: #414141;
+  background: rgba(23,62,46,0.9);
   -webkit-box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
   box-shadow: 4px 4px 18px rgba(0,0,0,0.46);
   border-radius: 6px;
@@ -3290,7 +3750,7 @@ color
   padding-bottom: 5px;
   margin: 0.5em auto;
   font-weight: 700;
-  color: #999;
+  color: #383232;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -3300,8 +3760,8 @@ color
 }
 .article-entry h3 {
   margin: 0.5em auto;
-  color: #fff;
-  background: rgba(0,0,0,0.27);
+  color: #0c0b0b;
+  background: rgba(117,158,136,0.27);
   border: 1px dashed #020202;
   padding: 0.2em 0.6em;
   font-weight: normal;
@@ -3372,7 +3832,7 @@ color
 .article-entry .highlight::before {
   content: attr(data-lang) " code";
   display: block;
-  background-color: #0083a0;
+  background-color: #73b1bf;
   margin: 0 -10px 16px -10px;
   padding: 8px 16px;
   color: #efefef;
@@ -3547,7 +4007,7 @@ pre .link_url {
 #footer {
   font-size: 12px;
   font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  color: #999;
+  color: #1b5273;
   position: absolute;
   bottom: 30px;
   width: 100%;
@@ -3557,10 +4017,10 @@ pre .link_url {
   padding: 0 30px;
 }
 #footer a {
-  color: #fff;
+  color: #0c0c0c;
 }
 #footer a:hover {
-  color: #999;
+  color: #442a2a;
 }
 .footer-left {
   float: left;
