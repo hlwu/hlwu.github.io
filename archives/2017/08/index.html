@@ -287,7 +287,7 @@
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
+                        <span id="site-visit" >访问数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -297,7 +297,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">阅读数: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -313,8 +313,8 @@
 
     <script>
         $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            var backgroundnum = 1;
+            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
             $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
             $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
         })
