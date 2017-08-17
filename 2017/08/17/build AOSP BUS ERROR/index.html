@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | How You Doing</title>
+  <title>AOSP build failed BUS ERROR | How You Doing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="build AOSP 时候一直遇到error(unable to execute command： Bus error (core dumped))">
+<meta name="keywords" content="build error,AOSP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://hlwu.wang/2017/08/04/hello-world/index.html">
+<meta property="og:title" content="AOSP build failed BUS ERROR">
+<meta property="og:url" content="http://hlwu.wang/2017/08/17/build AOSP BUS ERROR/index.html">
 <meta property="og:site_name" content="How You Doing">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-08-04T08:56:08.823Z">
+<meta property="og:description" content="build AOSP 时候一直遇到error(unable to execute command： Bus error (core dumped))">
+<meta property="og:updated_time" content="2017-08-17T02:50:47.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="AOSP build failed BUS ERROR">
+<meta name="twitter:description" content="build AOSP 时候一直遇到error(unable to execute command： Bus error (core dumped))">
   
     <link rel="alternative" href="/atom.xml" title="How You Doing" type="application/atom+xml">
   
@@ -216,11 +217,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-build AOSP BUS ERROR" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/04/hello-world/" class="article-date">
-      <time datetime="2017-08-04T08:56:08.766Z" itemprop="datePublished">2017-08-04</time>
+      <a href="/2017/08/17/build AOSP BUS ERROR/" class="article-date">
+      <time datetime="2017-08-17T02:41:01.319Z" itemprop="datePublished">2017-08-17</time>
 </a>
     </div>
   
@@ -233,7 +234,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      AOSP build failed BUS ERROR
     </h1>
   
 
@@ -243,6 +244,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AOSP/">AOSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/build-error/">build error</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -250,15 +255,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>使用ubuntu 16.04<br>build Android 7.1</p>
+<p>error info:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[ 11% 6039/53959] target SharedLib: libLLVM (out/target/product/xxx/obj/SHARED_LIBRARIES/libLLVM_intermediates/LINKED/libLLVM.so)</div><div class="line">FAILED: /bin/bash -c <span class="string">"prebuilts/clang/host/linux-x86/clang-2690385/bin/clang++ -nostdlib -Wl,-soname,libLLVM.so -Wl,--gc-sections -shared  -Lout/target/product/xxx/obj/lib out/target/product/xxx/obj/lib/crtbegin_so.o                     -Wl,--whole-archive  out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64CodeGen_intermediates/libLLVMAArch64CodeGen.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64Info_intermediates/libLLVMAArch64Info.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64Desc_intermediates/libLLVMAArch64Desc.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64AsmParser_intermediates/libLLVMAArch64AsmParser.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64AsmPrinter_intermediates/libLLVMAArch64AsmPrinter.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64Utils_intermediates/libLLVMAArch64Utils.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAArch64Disassembler_intermediates/libLLVMAArch64Disassembler.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMARMCodeGen_intermediates/libLLVMARMCodeGen.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMARMAsmParser_intermediates/libLLVMARMAsmParser.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMARMAsmPrinter_intermediates/libLLVMARMAsmPrinter.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMARMInfo_intermediates/libLLVMARMInfo.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMARMDesc_intermediates/libLLVMARMDesc.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMARMDisassembler_intermediates/libLLVMARMDisassembler.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMLinker_intermediates/libLLVMLinker.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMipo_intermediates/libLLVMipo.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMDebugInfoDWARF_intermediates/libLLVMDebugInfoDWARF.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMDebugInfoPDB_intermediates/libLLVMDebugInfoPDB.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMSymbolize_intermediates/libLLVMSymbolize.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMIRReader_intermediates/libLLVMIRReader.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMBitWriter_intermediates/libLLVMBitWriter.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMBitReader_intermediates/libLLVMBitReader.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAsmPrinter_intermediates/libLLVMAsmPrinter.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMSelectionDAG_intermediates/libLLVMSelectionDAG.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMCodeGen_intermediates/libLLVMCodeGen.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMObject_intermediates/libLLVMObject.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMScalarOpts_intermediates/libLLVMScalarOpts.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMInstCombine_intermediates/libLLVMInstCombine.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMInstrumentation_intermediates/libLLVMInstrumentation.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMTransformObjCARC_intermediates/libLLVMTransformObjCARC.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMTransformUtils_intermediates/libLLVMTransformUtils.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAnalysis_intermediates/libLLVMAnalysis.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMTarget_intermediates/libLLVMTarget.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMMCDisassembler_intermediates/libLLVMMCDisassembler.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMMC_intermediates/libLLVMMC.a out/target/product/x/obj/STATIC_LIBRARIES/libLLVMMCParser_intermediates/libLLVMMCParser.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMCore_intermediates/libLLVMCore.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMAsmParser_intermediates/libLLVMAsmParser.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMOption_intermediates/libLLVMOption.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMSupport_intermediates/libLLVMSupport.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMVectorize_intermediates/libLLVMVectorize.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMProfileData_intermediates/libLLVMProfileData.a out/target/product/xxx/obj/STATIC_LIBRARIES/libLLVMLibDriver_intermediates/libLLVMLibDriver.a -Wl,--no-whole-archive   out/target/product/xxx/obj/STATIC_LIBRARIES/libcompiler_rt-extras_intermediates/libcompiler_rt-extras.a   prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../lib/gcc/aarch64-linux-android/4.9/../../../../aarch64-linux-android/lib/../lib64/libatomic.a prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/../lib/gcc/aarch64-linux-android/4.9/libgcc.a -lc++ -ldl -lc -lm  -o out/target/product/xxx/obj/SHARED_LIBRARIES/libLLVM_intermediates/LINKED/libLLVM.so   -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -Wl,--build-id=md5 -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,-maarch64linux -Wl,--hash-style=gnu -Wl,--fix-cortex-a53-843419 -fuse-ld=gold -Wl,--icf=safe -Wl,--no-undefined-version -Wl,--allow-shlib-undefined    -target aarch64-linux-android -Bprebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/aarch64-linux-android/bin   -Wl,--no-undefined out/target/product/xxx/obj/lib/crtend_so.o"</span></div><div class="line">clang++: error: unable to execute <span class="built_in">command</span>: Bus error (core dumped)</div><div class="line">clang++: error: linker <span class="built_in">command</span> failed due to signal (use -v to see invocation)</div><div class="line">[ 11% 6039/53959] Notice file: external/zlib/NOTICE -- out/target/product/xxx/obj/NOTICE_FILES/src//system/lib64/libz.so.txt</div><div class="line">[ 11% 6039/53959] Install: out/target/product/xxx/system/lib64/libETC1.so</div><div class="line">[ 11% 6039/53959] Install: out/target/product/xxx/system/lib64/libharfbuzz_ng.so</div><div class="line">[ 11% 6039/53959] Install: out/target/product/xxx/system/lib64/libcrypto.so</div><div class="line">[ 11% 6039/53959] target  C++: libhwui_static &lt;= frameworks/base/libs/hwui/FrameBuilder.cpp</div><div class="line">[ 11% 6039/53959] target  C++: libhwui_static &lt;= frameworks/base/libs/hwui/RecordingCanvas.cpp</div><div class="line">[ 11% 6039/53959] Generating libraries.cc</div><div class="line">ninja: build stopped: subcommand failed.</div><div class="line">make: *** [ninja_wrapper] Error 1</div><div class="line">build/core/ninja.mk:149: recipe <span class="keyword">for</span> target <span class="string">'ninja_wrapper'</span> failed</div></pre></td></tr></table></figure></p>
+<p>开始时候认为是clang 依赖包有问题. 但重装clang 后依然持续报错.<br>网上查找后发现BUS ERROR 一般指的是指针未对齐？这tm是啥，我又没碰过c++ 的code.<br>灵光一闪，会不会因为我build 的source code 是放在一块外接的硬盘中导致的？然后build code 的时候input/output 地址出问题了？<br>重新下载source code 到原生硬盘中再build. build successfully!</p>
 
       
       
@@ -314,13 +313,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/04/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2017/08/17/build AOSP BUS ERROR/">AOSP build failed BUS ERROR</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Hlwu Wang 的个人博客">Hlwu Wang</a></p>
-        <p><span>发布时间:</span>2017年08月04日 - 16时56分</p>
-        <p><span>最后更新:</span>2017年08月04日 - 16时56分</p>
+        <p><span>发布时间:</span>2017年08月17日 - 10时41分</p>
+        <p><span>最后更新:</span>2017年08月17日 - 10时50分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/04/hello-world/" title="Hello World">http://hlwu.wang/2017/08/04/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2017/08/04/hello-world/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/08/17/build AOSP BUS ERROR/" title="AOSP build failed BUS ERROR">http://hlwu.wang/2017/08/17/build AOSP BUS ERROR/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2017/08/17/build AOSP BUS ERROR/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -333,15 +332,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/08/04/test-my-site/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          MY HELLO WORLD
-        
-      </div>
-    </a>
   
+    <a href="/2017/08/04/test-my-site/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MY HELLO WORLD</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -350,7 +345,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -416,13 +411,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/04/test-my-site/" title="上一篇: MY HELLO WORLD">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/08/04/test-my-site/" title="下一篇: MY HELLO WORLD">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/build AOSP BUS ERROR/">AOSP build failed BUS ERROR</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/test-my-site/">MY HELLO WORLD</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/hello-world/">Hello World</a></li></ul>
