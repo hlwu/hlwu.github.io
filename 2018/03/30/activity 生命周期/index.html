@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | How You Doing</title>
+  <title>android activity 生命周期 | How You Doing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="activity 正常和特殊生命周期 和启动模式.">
+<meta name="keywords" content="android,activity,launchMode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://hlwu.wang/2017/08/04/hello-world/index.html">
+<meta property="og:title" content="android activity 生命周期">
+<meta property="og:url" content="http://hlwu.wang/2018/03/30/activity 生命周期/index.html">
 <meta property="og:site_name" content="How You Doing">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2018-03-06T06:10:39.987Z">
+<meta property="og:description" content="activity 正常和特殊生命周期 和启动模式.">
+<meta property="og:updated_time" content="2018-03-30T07:20:51.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="android activity 生命周期">
+<meta name="twitter:description" content="activity 正常和特殊生命周期 和启动模式.">
   
     <link rel="alternative" href="/atom.xml" title="How You Doing" type="application/atom+xml">
   
@@ -216,11 +217,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-activity 生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/04/hello-world/" class="article-date">
-      <time datetime="2017-08-03T16:00:00.000Z" itemprop="datePublished">2017-08-04</time>
+      <a href="/2018/03/30/activity 生命周期/" class="article-date">
+      <time datetime="2018-03-29T16:00:00.000Z" itemprop="datePublished">2018-03-30</time>
 </a>
     </div>
   
@@ -233,7 +234,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      android activity 生命周期
     </h1>
   
 
@@ -243,6 +244,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/activity/">activity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/launchMode/">launchMode</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -250,15 +255,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>&emsp;<br>&emsp;&emsp;onCreate, 加载布局, 初始化等操作，对应onDestroy;<br>&emsp;&emsp;onStart, activity可见, 对应onStop;<br>&emsp;&emsp;onResume, activity位于前台, 拿到focus, 可交互, 对应onPause;<br>&emsp;&emsp;onRestart, 重新从后台到前台, 如按Home 再进入;<br>&emsp;&emsp;onSavedInstanceState, 被意外杀掉, 在onDestroy 前调用, 在重新onCreate 后调用 onRestoreInstanceState.<br>&emsp;<br>&emsp;&emsp;正常生命周期：onCreate-&gt;onStart-&gt;onResume-&gt;onPause-&gt;onStop-&gt;onDestroy<br>&emsp;&emsp;由A 启动一个普通activity B: A.onPause-&gt;B.onCreate-&gt;B.onStart-&gt;B.onResume-&gt;A.onStop<br>&emsp;&emsp;由A 启动一个透明activity B: A.onPause-&gt;B.onCreate-&gt;B.onStart-&gt;B.onResume<br>&emsp;&emsp;横竖屏切换(未配置android:configChanges)：onSavedInstanceState-&gt;onDestroy-&gt;onCreate-&gt;onRestoreInstanceState<br>&emsp;&emsp;横竖屏切换(配置android:configChanges)：onConfigurationChanged<br>&emsp;&emsp;按Home 然后重新进入: onPause-&gt;onStop-&gt;onRestart-&gt;onStart-&gt;onResume<br>&emsp;<br>&emsp;<br>standard:<br>&emsp;&emsp;每次都创建一个新的activity.<br>singleTop(始终保持栈顶只有一个activity):<br>&emsp;&emsp;如果不在栈顶: 创建新的activity 压入栈顶.<br>&emsp;&emsp;如果在栈顶: 复用现在的activity, onPause-&gt;onNewIntent-&gt;onResume<br>singleTask:<br>&emsp;&emsp;①要定义android:taskAffinity 属性(非包名), 才会创建新栈并放入activity. 如果没定义taskAffinity(或和包名相同), 表示复用现在的栈, 不会创建新栈.<br>&emsp;&emsp;②要新创建一个activity时, 先看指定栈是否存在, 如不存在则先创建指定栈再创建新activity.<br>&emsp;&emsp;③如果再次启动activity, 如果此activity 位于栈顶, 则和singleTop 一样复用; 如果没有位于栈顶, 则清空相同栈内此activity 之上的其余activity, 达到将目标activity 置顶的效果. (比如站内目前有ABCDEF 这6个activities, C 是singleTask,  此时再次启动C 之后, 栈内为ABC.)<br>singleInstance:<br>&emsp;&emsp;单例模式, 如果之前没创建过, 必然会创建一个新栈, 切栈内只会有这一个activity; 如果之前创建过, 复用那个activity. onPause-&gt;onNewIntent-&gt;onResume<br>&emsp;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line">    @Override</div><div class="line">    protected void onCreate(@Nullable Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_for_life_cycle);</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onCreate stack: "</span> + getTaskId());</div><div class="line">        getSupportActionBar().setTitle(<span class="string">"LifeCycleActivity taskId: "</span> + getTaskId());</div><div class="line">        ((Button) findViewById(R.id.life_cycle_button)).setOnClickListener(new View.<span class="function"><span class="title">OnClickListener</span></span>() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                startActivity(new Intent(LifeCycleActivity.this, TransparentActivity.class));</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        ((Button) findViewById(R.id.life_cycle_button2)).setOnClickListener(new View.<span class="function"><span class="title">OnClickListener</span></span>() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                startActivity(new Intent(LifeCycleActivity.this, NonTransparentActivity.class));</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        ((Button) findViewById(R.id.life_cycle_button3)).setOnClickListener(new View.<span class="function"><span class="title">OnClickListener</span></span>() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(View v) &#123;</div><div class="line">                startActivity(new Intent(LifeCycleActivity.this, LifeCycleActivity.class));</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onNewIntent(Intent intent) &#123;</div><div class="line">        super.onNewIntent(intent);</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onNewIntent"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onConfigurationChanged(Configuration newConfig) &#123;</div><div class="line">        super.onConfigurationChanged(newConfig);</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onConfigurationChanged"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onRestoreInstanceState(Bundle savedInstanceState) &#123;</div><div class="line">        super.onRestoreInstanceState(savedInstanceState);</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onRestoreInstanceState"</span>);</div><div class="line">        String s = savedInstanceState.getString(<span class="string">"string"</span>);</div><div class="line">        Toast.makeText(this, s, Toast.LENGTH_LONG).show();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onSaveInstanceState(Bundle outState) &#123;</div><div class="line">        super.onSaveInstanceState(outState);</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onSaveInstanceState"</span>);</div><div class="line">        outState.putString(<span class="string">"string"</span>, <span class="string">"saved string.........."</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void <span class="function"><span class="title">onDestroy</span></span>() &#123;</div><div class="line">        super.onDestroy();</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onDestroy"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void <span class="function"><span class="title">onStop</span></span>() &#123;</div><div class="line">        super.onStop();</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onStop"</span>);</div><div class="line">//        Log.d(<span class="string">"flaggg"</span>, <span class="string">"sleep 10s"</span>);</div><div class="line">//        try &#123;</div><div class="line">//            Thread.sleep(10000);</div><div class="line">//        &#125; catch (Exception e) &#123;</div><div class="line">//            Log.d(<span class="string">"flaggg"</span>, <span class="string">"sleep got exception"</span>);</div><div class="line">//        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void <span class="function"><span class="title">onPause</span></span>() &#123;</div><div class="line">        super.onPause();</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onPause"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void <span class="function"><span class="title">onRestart</span></span>() &#123;</div><div class="line">        super.onRestart();</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onRestart"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void <span class="function"><span class="title">onResume</span></span>() &#123;</div><div class="line">        super.onResume();</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onResume"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void <span class="function"><span class="title">onStart</span></span>() &#123;</div><div class="line">        super.onStart();</div><div class="line">        Log.d(<span class="string">"flaggg"</span>, <span class="string">"LifeCycleActivity.onStart"</span>);</div><div class="line">//        Log.d(<span class="string">"flaggg"</span>, <span class="string">"sleep 10s"</span>);</div><div class="line">//        try &#123;</div><div class="line">//            Thread.sleep(10000);</div><div class="line">//        &#125; catch (Exception e) &#123;</div><div class="line">//            Log.d(<span class="string">"flaggg"</span>, <span class="string">"sleep got exception"</span>);</div><div class="line">//        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>code link: <a href="https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/activitylifecycle" target="_blank" rel="external">https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/activitylifecycle</a></p>
 
       
       
@@ -314,13 +312,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/04/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2018/03/30/activity 生命周期/">android activity 生命周期</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Hlwu Wang 的个人博客">Hlwu Wang</a></p>
-        <p><span>发布时间:</span>2017年08月04日 - 00时00分</p>
-        <p><span>最后更新:</span>2018年03月06日 - 14时10分</p>
+        <p><span>发布时间:</span>2018年03月30日 - 00时00分</p>
+        <p><span>最后更新:</span>2018年03月30日 - 15时20分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/04/hello-world/" title="Hello World">http://hlwu.wang/2017/08/04/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2017/08/04/hello-world/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/30/activity 生命周期/" title="android activity 生命周期">http://hlwu.wang/2018/03/30/activity 生命周期/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2018/03/30/activity 生命周期/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -333,15 +331,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2017/08/09/test-my-site/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          MY HELLO WORLD
-        
-      </div>
-    </a>
   
+    <a href="/2018/03/23/Java 方法参数传递/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java 方法参数传递</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -350,7 +344,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -416,13 +410,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/09/test-my-site/" title="上一篇: MY HELLO WORLD">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/03/23/Java 方法参数传递/" title="下一篇: java 方法参数传递">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/30/activity 生命周期/">android activity 生命周期</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/Java 方法参数传递/">java 方法参数传递</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/synchronized和Lock/">java synchronized 和Lock</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/黄油猫悖论/">黄油猫悖论</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/01/shrinkResource/">Gradle build 时图片没有包进apk 中solution</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/build AOSP BUS ERROR/">AOSP build failed BUS ERROR</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/09/test-my-site/">MY HELLO WORLD</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/hello-world/">Hello World</a></li></ul>
