@@ -3,21 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>黄油猫悖论 | How You Doing</title>
+  <title>IPC 笔记 | How You Doing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="黄油面包 + 猫 = 永动机 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
-<meta name="keywords" content="涨姿势">
+  <meta name="description" content="IPC(Inter process communication) 可以通过AIDL/ Messenger/  ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.">
+<meta name="keywords" content="android,IPC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="黄油猫悖论">
-<meta property="og:url" content="http://hlwu.wang/2018/03/06/黄油猫悖论/index.html">
+<meta property="og:title" content="IPC 笔记">
+<meta property="og:url" content="http://hlwu.wang/2018/04/04/IPC 笔记/index.html">
 <meta property="og:site_name" content="How You Doing">
-<meta property="og:description" content="黄油面包 + 猫 = 永动机 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
-<meta property="og:image" content="http://hlwu.wang/img/butteredCat.jpg">
-<meta property="og:updated_time" content="2018-03-06T06:03:23.499Z">
+<meta property="og:description" content="IPC(Inter process communication) 可以通过AIDL/ Messenger/  ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.">
+<meta property="og:updated_time" content="2018-04-04T08:45:05.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄油猫悖论">
-<meta name="twitter:description" content="黄油面包 + 猫 = 永动机 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈">
-<meta name="twitter:image" content="http://hlwu.wang/img/butteredCat.jpg">
+<meta name="twitter:title" content="IPC 笔记">
+<meta name="twitter:description" content="IPC(Inter process communication) 可以通过AIDL/ Messenger/  ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.">
   
     <link rel="alternative" href="/atom.xml" title="How You Doing" type="application/atom+xml">
   
@@ -219,11 +217,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-黄油猫悖论" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-IPC 笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/06/黄油猫悖论/" class="article-date">
-      <time datetime="2018-03-06T05:51:22.000Z" itemprop="datePublished">2018-03-06</time>
+      <a href="/2018/04/04/IPC 笔记/" class="article-date">
+      <time datetime="2018-04-03T16:00:00.000Z" itemprop="datePublished">2018-04-04</time>
 </a>
     </div>
   
@@ -236,7 +234,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      黄油猫悖论
+      IPC 笔记
     </h1>
   
 
@@ -247,7 +245,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/涨姿势/">涨姿势</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IPC/">IPC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -257,9 +255,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>黄油面包 + 猫 = 永动机</p>
-<p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
-<p><img src="/img/butteredCat.jpg" alt="hhh" width="35%" height="35%"></p>
+        <p>&emsp;<br>IPC(Inter process communication) 可以通过AIDL/ Messenger/ ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.<br>&emsp;</p>
+<h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程:"></a>多进程:</h2><p>&emsp;&emsp;一个应用可以开启多个进程. AndroidManifest.xml 定义四大组件时候加android:process=””, 默认不加时候进程名和包名相同, 定义成android:process=”:remote” 代表着进程名为”包名:remote”. 或者直接定义进程名android:process=”com.hlwu.test.remote”. 当使用”:” 定义时代表是此应用的私有进程, 不会通过shareUID 的方式被其他应用使用到.<br>&emsp;&emsp;多个应用若想跑在同一个进程, 需要shareUID, 同时需要有相同签名, 此时可以共享/data， 组件信息, 由于跑在相同进程, 内存数据也可以被共享到.<br>&emsp;&emsp;不同的进程会分配不同的虚拟机, 所以不同进程间的数据不能直接改动. 会有以下影响: ①static 变量和单例模式失效, ②线程同步失效, ③多个进程如果同时操作相同的SharedPerference, 存在同步问题, ④Application 会被创建多次(如果有初始化数据的动作, 需要注意可以根据packageName 区分).<br>&emsp;</p>
+<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化:"></a>序列化:</h2><p>&emsp;&emsp;Serializable 接口: Java 提供, 序列化和反序列化效率低.<br>&emsp;&emsp;Parcelable 接口: Android 提供, 使用麻烦一丢丢, 效率高.<br>&emsp;</p>
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket:"></a>Socket:</h2><p>代码示例：<a href="https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/socket" target="_blank" rel="external">https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/socket</a><br>&emsp;</p>
+<h2 id="Binder-连接池"><a href="#Binder-连接池" class="headerlink" title="Binder 连接池:"></a>Binder 连接池:</h2><p>&emsp;&emsp;一般情况下客户端通过bindService 中ServiceConnection 的onServiceConnected 回调可以获得服务端的AIDL 的Stub 实例, 但如果服务端提供了多个AIDL, 我们没必要为每一个AIDL 都建一个Service 提供给客户端. 可以做一个Binder 连接池, 客户端从连接池中拿所需的Stub 实例. 简单讲就是做一个专门提供queryAidl(int aidlCode) 功能的AIDL(假设A), 服务端将A 的Stub 实例返回给客户端, 客户端通过queryAidl(int aidlCode) 拿到不同的AIDL 实例.</p>
 
       
       
@@ -315,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/03/06/黄油猫悖论/">黄油猫悖论</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/04/IPC 笔记/">IPC 笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Hlwu Wang 的个人博客">Hlwu Wang</a></p>
-        <p><span>发布时间:</span>2018年03月06日 - 13时51分</p>
-        <p><span>最后更新:</span>2018年03月06日 - 14时03分</p>
+        <p><span>发布时间:</span>2018年04月04日 - 00时00分</p>
+        <p><span>最后更新:</span>2018年04月04日 - 16时45分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/03/06/黄油猫悖论/" title="黄油猫悖论">http://hlwu.wang/2018/03/06/黄油猫悖论/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2018/03/06/黄油猫悖论/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/04/IPC 笔记/" title="IPC 笔记">http://hlwu.wang/2018/04/04/IPC 笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2018/04/04/IPC 笔记/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -334,18 +334,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/03/23/synchronized和Lock/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          java synchronized 和Lock
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/01/shrinkResource/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Gradle build 时图片没有包进apk 中solution</div>
+    <a href="/2018/03/30/activity 生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">android activity 生命周期</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -356,7 +347,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多进程"><span class="toc-number">1.</span> <span class="toc-text">多进程:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化"><span class="toc-number">2.</span> <span class="toc-text">序列化:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket"><span class="toc-number">3.</span> <span class="toc-text">Socket:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Binder-连接池"><span class="toc-number">4.</span> <span class="toc-text">Binder 连接池:</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -422,13 +413,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/03/23/synchronized和Lock/" title="上一篇: java synchronized 和Lock">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2017/10/01/shrinkResource/" title="下一篇: Gradle build 时图片没有包进apk 中solution">
+            <a href="/2018/03/30/activity 生命周期/" title="下一篇: android activity 生命周期">
                 <i class="fa fa-angle-right"></i>
             </a>
         
