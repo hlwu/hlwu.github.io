@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>IPC 笔记 | How You Doing</title>
+  <title>View 事件相关 | How You Doing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IPC(Inter process communication) 可以通过AIDL/ Messenger/  ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.">
-<meta name="keywords" content="android,IPC">
+  <meta name="description" content="view touch 事件相关笔记.">
+<meta name="keywords" content="android,view,Touch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IPC 笔记">
-<meta property="og:url" content="http://hlwu.wang/2018/04/04/IPC 笔记/index.html">
+<meta property="og:title" content="View 事件相关">
+<meta property="og:url" content="http://hlwu.wang/2018/04/09/view 事件相关/index.html">
 <meta property="og:site_name" content="How You Doing">
-<meta property="og:description" content="IPC(Inter process communication) 可以通过AIDL/ Messenger/  ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.">
-<meta property="og:updated_time" content="2018-04-04T08:45:05.236Z">
+<meta property="og:description" content="view touch 事件相关笔记.">
+<meta property="og:updated_time" content="2018-04-09T11:41:17.912Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IPC 笔记">
-<meta name="twitter:description" content="IPC(Inter process communication) 可以通过AIDL/ Messenger/  ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.">
+<meta name="twitter:title" content="View 事件相关">
+<meta name="twitter:description" content="view touch 事件相关笔记.">
   
     <link rel="alternative" href="/atom.xml" title="How You Doing" type="application/atom+xml">
   
@@ -217,11 +217,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-IPC 笔记" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-view 事件相关" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/04/IPC 笔记/" class="article-date">
-      <time datetime="2018-04-03T16:00:00.000Z" itemprop="datePublished">2018-04-04</time>
+      <a href="/2018/04/09/view 事件相关/" class="article-date">
+      <time datetime="2018-04-08T16:00:00.000Z" itemprop="datePublished">2018-04-09</time>
 </a>
     </div>
   
@@ -234,7 +234,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      IPC 笔记
+      View 事件相关
     </h1>
   
 
@@ -245,7 +245,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IPC/">IPC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Touch/">Touch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/view/">view</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -255,11 +255,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>&emsp;<br>IPC(Inter process communication) 可以通过AIDL/ Messenger/ ContentProvider / Socket/ 共享数据/ Intent(带Bundle 等extras) 等.<br>&emsp;</p>
-<h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程:"></a>多进程:</h2><p>&emsp;&emsp;一个应用可以开启多个进程. AndroidManifest.xml 定义四大组件时候加android:process=””, 默认不加时候进程名和包名相同, 定义成android:process=”:remote” 代表着进程名为”包名:remote”. 或者直接定义进程名android:process=”com.hlwu.test.remote”. 当使用”:” 定义时代表是此应用的私有进程, 不会通过shareUID 的方式被其他应用使用到.<br>&emsp;&emsp;多个应用若想跑在同一个进程, 需要shareUID, 同时需要有相同签名, 此时可以共享/data， 组件信息, 由于跑在相同进程, 内存数据也可以被共享到.<br>&emsp;&emsp;不同的进程会分配不同的虚拟机, 所以不同进程间的数据不能直接改动. 会有以下影响: ①static 变量和单例模式失效, ②线程同步失效, ③多个进程如果同时操作相同的SharedPerference, 存在同步问题, ④Application 会被创建多次(如果有初始化数据的动作, 需要注意可以根据packageName 区分).<br>&emsp;</p>
-<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化:"></a>序列化:</h2><p>&emsp;&emsp;Serializable 接口: Java 提供, 序列化和反序列化效率低.<br>&emsp;&emsp;Parcelable 接口: Android 提供, 使用麻烦一丢丢, 效率高.<br>&emsp;</p>
-<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket:"></a>Socket:</h2><p>代码示例：<a href="https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/socket" target="_blank" rel="external">https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/socket</a><br>&emsp;</p>
-<h2 id="Binder-连接池"><a href="#Binder-连接池" class="headerlink" title="Binder 连接池:"></a>Binder 连接池:</h2><p>&emsp;&emsp;一般情况下客户端通过bindService 中ServiceConnection 的onServiceConnected 回调可以获得服务端的AIDL 的Stub 实例, 但如果服务端提供了多个AIDL, 我们没必要为每一个AIDL 都建一个Service 提供给客户端. 可以做一个Binder 连接池, 客户端从连接池中拿所需的Stub 实例. 简单讲就是做一个专门提供queryAidl(int aidlCode) 功能的AIDL(假设A), 服务端将A 的Stub 实例返回给客户端, 客户端通过queryAidl(int aidlCode) 拿到不同的AIDL 实例.</p>
+        <p>&emsp;</p>
+<h2 id="MotionEvent"><a href="#MotionEvent" class="headerlink" title="MotionEvent:"></a>MotionEvent:</h2><p>接触屏幕所产生的事件.<br>ACTION_DOWN, ACTION_MOVE, ACTION_UP.<br>getX/getY: 相对于当前view 左上角的x 和y 坐标.<br>getRawX/getRawY: 相对于屏幕左上角的x 和y 坐标.<br>&emsp;</p>
+<h2 id="TouchSlop"><a href="#TouchSlop" class="headerlink" title="TouchSlop:"></a>TouchSlop:</h2><p>系统所能识别的最小滑动距离.<br>可以通过判断此值来处理是否滑动, 提升用户体验: ViewConfiguration.get(context).getScaledTouchSlop();<br>&emsp;</p>
+<h2 id="VelocityTracker"><a href="#VelocityTracker" class="headerlink" title="VelocityTracker:"></a>VelocityTracker:</h2><p>滑动过程中的速度追踪, 包含水平和竖直方向.<br>addMovement(MotionEvent event)可以监听某个motionEvent 的速度.<br>&emsp;</p>
+<h2 id="GestureDetector"><a href="#GestureDetector" class="headerlink" title="GestureDetector:"></a>GestureDetector:</h2><p>检测用户的单击/双击/长按/滑动 等动作.<br>&emsp;</p>
+<h2 id="View-的滑动"><a href="#View-的滑动" class="headerlink" title="View 的滑动:"></a>View 的滑动:</h2><p>1.使用scrollTo/scrollBy：改变的是view 的内容位置, 不改变view 位置.<br>2.动画(逐帧动画，补间动画，属性动画)<br>3.改变LayoutParams<br>&emsp;</p>
+<h2 id="事件分发机制"><a href="#事件分发机制" class="headerlink" title="事件分发机制:"></a>事件分发机制:</h2><p>1.一般同一系列的事件包括DOWN/MOVE/UP.<br>2.分发用到的主要函数: dispatchTouchEvent / onInterceptTouchEvent() / onTouchEvent<br>3.主要是对MotionEvent 事件的分发过程.<br>4.首先Activity 收到Touch 事件后会dispatchTouchEvent, 通过PhoneWindow 直接将事件传递给DecorView（extends FrameLayout）， DecorView 中保有我们setContentView 时所传的Layout,<br>然后就dispatchTouchEvent 给子view(如果子view 还是ViewGroup, 则继续看其子view 并调用dispatchTouchEvent). 如果某个子ViewGroup 需要拦截这个事件, 会调用onInterceptTouchEvent 返回true, 然后调用它的onTouchEvent 去处理Touch 事件.<br>并且之后同一系列的事件直接传给此ViewGroup.<br>5.onInterceptTouchEvent 是ViewGroup 的方法, 某个具体的view 没有这个方法.<br>6.如果某个view(或ViewGroup) 设置的OnTouchListener, 并且listener 的onTouch()方法中返回了true, 那么这个view 的onTouchEvent 方法不会被执行.<br>也就是说, OnTouchListener 的OnTouch 方法先于View 的OnTouchEvent 被执行. 晚于onInterceptTouchEvent() 执行.<br>7.子view 能否被父viewgroup dispatch 到事件, 需要子view: ① VISIBLE, ② 不在Animation, ③ 点击事件位于此子view 区域内.<br>8.父ViewGroup diapatch 事件的时候会记录first touch target(第一个拦截事件的子view), 这样达到后续同一系列的事件都传给这个子view 的效果.<br>9.disenable 的view 可以收到touch 事件; 非VISIBLE 的view 不能收到touch 事件.<br>10.view 的CLICKABLE 或LONG_CLICKABLE 任何一个是true, 这个view 会自动拦截这个事件.<br>11.UP 事件会触发performClick().<br>&emsp;</p>
+<h2 id="事件拦截"><a href="#事件拦截" class="headerlink" title="事件拦截:"></a>事件拦截:</h2><p>1.外部拦截: 父ViewGroup 在适当的时候intercept 这个事件.<br>2.内部拦截: 需要处理的view 直接消耗调这个事件, 重写这个view 的dispatchTouchEvent() 方法, 同时还需要调用父ViewGroup 的requestDisallowInterceptTouchEvent()方法.<br>&emsp;</p>
+<p>code link: <a href="https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/view" target="_blank" rel="external">https://github.com/hlwu/ForTest/tree/master/app/src/main/java/fortest/hlwu/com/fortest/view</a></p>
 
       
       
@@ -315,13 +319,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/04/04/IPC 笔记/">IPC 笔记</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/09/view 事件相关/">View 事件相关</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Hlwu Wang 的个人博客">Hlwu Wang</a></p>
-        <p><span>发布时间:</span>2018年04月04日 - 00时00分</p>
-        <p><span>最后更新:</span>2018年04月04日 - 16时45分</p>
+        <p><span>发布时间:</span>2018年04月09日 - 00时00分</p>
+        <p><span>最后更新:</span>2018年04月09日 - 19时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/04/04/IPC 笔记/" title="IPC 笔记">http://hlwu.wang/2018/04/04/IPC 笔记/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2018/04/04/IPC 笔记/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/09/view 事件相关/" title="View 事件相关">http://hlwu.wang/2018/04/09/view 事件相关/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://hlwu.wang/2018/04/09/view 事件相关/　　作者: Hlwu Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -334,18 +338,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/04/09/view 事件相关/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          View 事件相关
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/30/activity 生命周期/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">android activity 生命周期</div>
+    <a href="/2018/04/04/IPC 笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IPC 笔记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -356,7 +351,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#多进程"><span class="toc-number">1.</span> <span class="toc-text">多进程:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化"><span class="toc-number">2.</span> <span class="toc-text">序列化:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket"><span class="toc-number">3.</span> <span class="toc-text">Socket:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Binder-连接池"><span class="toc-number">4.</span> <span class="toc-text">Binder 连接池:</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MotionEvent"><span class="toc-number">1.</span> <span class="toc-text">MotionEvent:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TouchSlop"><span class="toc-number">2.</span> <span class="toc-text">TouchSlop:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VelocityTracker"><span class="toc-number">3.</span> <span class="toc-text">VelocityTracker:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GestureDetector"><span class="toc-number">4.</span> <span class="toc-text">GestureDetector:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View-的滑动"><span class="toc-number">5.</span> <span class="toc-text">View 的滑动:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件分发机制"><span class="toc-number">6.</span> <span class="toc-text">事件分发机制:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件拦截"><span class="toc-number">7.</span> <span class="toc-text">事件拦截:</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -422,13 +417,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/04/09/view 事件相关/" title="上一篇: View 事件相关">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/03/30/activity 生命周期/" title="下一篇: android activity 生命周期">
+            <a href="/2018/04/04/IPC 笔记/" title="下一篇: IPC 笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -138,7 +138,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/AOSP/" style="font-size: 10px;">AOSP</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/IPC/" style="font-size: 10px;">IPC</a> <a href="/tags/activity/" style="font-size: 10px;">activity</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/build-error/" style="font-size: 10px;">build error</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/launchMode/" style="font-size: 10px;">launchMode</a> <a href="/tags/shrinkResource/" style="font-size: 10px;">shrinkResource</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/涨姿势/" style="font-size: 10px;">涨姿势</a>
+                        <a href="/tags/AOSP/" style="font-size: 10px;">AOSP</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/IPC/" style="font-size: 10px;">IPC</a> <a href="/tags/Touch/" style="font-size: 10px;">Touch</a> <a href="/tags/activity/" style="font-size: 10px;">activity</a> <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/build-error/" style="font-size: 10px;">build error</a> <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/launchMode/" style="font-size: 10px;">launchMode</a> <a href="/tags/shrinkResource/" style="font-size: 10px;">shrinkResource</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/涨姿势/" style="font-size: 10px;">涨姿势</a>
                     </div>
                 </section>
                 
@@ -368,7 +368,41 @@
 
   </div>
 </body>
-</html>>
+</html>        $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+    <button class="hide-labels">TAG 开关</button>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
   <script language="javascript">
     $(function() {
